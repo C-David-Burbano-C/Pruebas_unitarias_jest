@@ -25,7 +25,7 @@ describe("MultiplicationTable", () => {
     expect(screen.getByText("5 × 10 = 50")).toBeInTheDocument();
   });
 
-  test("no genera tabla si el input está vacío", () => {
+  test("no genera tabla si el input está vací", () => {
     render(<MultiplicationTable />);
     const button = screen.getByRole("button", { name: /Generar/i });
 
