@@ -17,7 +17,12 @@ describe("MultiplicationTable", () => {
     // 4. Hacer clic en el botón "Generar"
     fireEvent.click(button);
 
-een.getByText("5 × 10 = 50")).toBeInTheDocument();
+    // 5. Verificar que aparece el título con "Tabla del 5"
+    expect(screen.getByText("Tabla del 5")).toBeInTheDocument();
+
+    // 6. Verificar que se generó el resultado correcto (ejemplo: 5 × 1 = 5)
+    expect(screen.getByText("5 × 1 = 5")).toBeInTheDocument();
+    expect(screen.getByText("5 × 10 = 50")).toBeInTheDocument();
   });
 
   test("no genera tabla si el input está vací", () => {
