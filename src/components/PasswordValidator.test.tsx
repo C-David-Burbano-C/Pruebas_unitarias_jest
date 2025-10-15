@@ -17,6 +17,10 @@ describe("PasswordValidator Component", () => {
 
     fireEvent.change(input, { target: { value: "Password123" } });
 
+    expect(screen.getByText(/Al menos 8 caracteres/)).toHaveTextContent("✔️");
+    expect(screen.getByText(/Contiene un número/)).toHaveTextContent("✔️");
+    expect(screen.getByText(/Contiene una letra mayúscula/)).toHaveTextContent("✔️");
+  });
 
   test("detecta cuando solo algunas reglas se cumplen", () => {
     render(<PasswordValidator />);
